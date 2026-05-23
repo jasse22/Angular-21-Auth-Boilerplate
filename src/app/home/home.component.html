@@ -1,0 +1,8 @@
+﻿<h1>Home</h1>
+<div *ngIf="account">
+    <p>Welcome {{ account.firstName }} {{ account.lastName }}!</p>
+    <p>You are logged in as: <strong>{{ account.role }}</strong></p>
+</div>
+<div *ngIf="!account">
+    <p>Loading...</p>
+</div>
