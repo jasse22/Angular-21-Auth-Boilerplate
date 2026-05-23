@@ -1,0 +1,26 @@
+﻿<h1>Manage Accounts</h1>
+<a routerLink="add" class="btn btn-primary mb-2">Create Account</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let account of accounts">
+            <td>{{ account.title }} {{ account.firstName }} {{ account.lastName }}</td>
+            <td>{{ account.email }}</td>
+            <td>{{ account.role }}</td>
+            <td>
+                <a [routerLink]="['edit', account.id]" class="btn btn-sm btn-primary me-1">Edit</a>
+                <button (click)="deleteAccount(account.id)" class="btn btn-sm btn-danger" [disabled]="account.isDeleting">Delete</button>
+            </td>
+        </tr>
+        <tr *ngIf="loading">
+            <td colspan="4" class="text-center">Loading accounts...</td>
+        </tr>
+    </tbody>
+</table>
