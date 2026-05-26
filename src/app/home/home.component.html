@@ -1,0 +1,8 @@
+﻿<div class="p-4">
+    <div class="container">
+        <h1>Hi, {{account?.firstName}}!</h1>
+        <p>You're logged in with Angular & JWT</p>
+        <p><a routerLink="/profile">My Profile</a></p>
+        <p *ngIf="account?.role === Role.Admin"><a routerLink="/admin">Admin Area</a></p>
+    </div>
+</div>

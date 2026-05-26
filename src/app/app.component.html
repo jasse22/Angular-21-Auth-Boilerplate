@@ -1,0 +1,22 @@
+﻿<!-- main nav bar - only shown when logged in -->
+<nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="account">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" routerLink="/profile">My Profile</a>
+        <a class="nav-item nav-link" routerLink="/admin" *ngIf="account.role === Role.Admin">Admin</a>
+    </div>
+    <div class="navbar-nav ms-auto">
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+
+<!-- subnav outlet -->
+<router-outlet name="subnav"></router-outlet>
+
+<!-- global alert -->
+<div class="container pt-3">
+    <alert></alert>
+</div>
+
+<!-- main app router outlet -->
+<router-outlet></router-outlet>

@@ -1,0 +1,17 @@
+﻿<div class="card mt-5">
+    <h4 class="card-header">Verify Email</h4>
+    <div class="card-body">
+        <div *ngIf="verifying">
+            <span class="spinner-border spinner-border-sm me-1"></span>
+            Verifying your email address, please wait a moment...
+        </div>
+        <div *ngIf="!verifying">
+            <div *ngIf="verificationSuccess" class="alert alert-success">
+                Your email has been verified, you can now <a routerLink="../login">login</a>.
+            </div>
+            <div *ngIf="!verificationSuccess" class="alert alert-danger">
+                Verification failed, you can also verify your account using the <a routerLink="../forgot-password">forgot password</a> page.
+            </div>
+        </div>
+    </div>
+</div>

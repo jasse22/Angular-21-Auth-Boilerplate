@@ -1,0 +1,6 @@
+/* Global Styles */
+a { cursor: pointer; }
+
+.navbar-nav .nav-link {
+    cursor: pointer;
+}
